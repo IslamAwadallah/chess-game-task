@@ -47,17 +47,13 @@ def RegestTeam(team):
     T_color = askForPlayerSide()
     team = Team(T_name,T_color)
     Team_list.append(team)
-
+    RegestPlayer(team)
 
 def RegestPlayer(team):
-    P_name=raw_input("Enter player name>> ")
-
-    for j in Team_list:
-        print(j)
-
-    join=raw_input("choose team to join it >>> ")
-
-
+    m=raw_input("How many players you want to add >>> ")
+    for i in xrange(int(m)):
+        P_name=raw_input("Enter player name>> ")
+        team.addPlayer(P_name)
 
 
 
@@ -68,7 +64,7 @@ if __name__ == '__main__':
     while True:
         print("____________________________________")
         print("Enter 1 to Regist Team ")
-        print("Enter 2 to join Player ")
+        # print("Enter 2 to join Player ")
         print("Enter 3 to  Print all teams ")
         print("Enter 4 to print team information  ")
         print("Enter 5 to start play Game ")
@@ -77,13 +73,11 @@ if __name__ == '__main__':
 
         if char=="1":
             RegestTeam(team)
-        elif char =="2":
-            RegestPlayer(team)
         elif char=="3":
             for i in Team_list:
                 print(i)
         elif char=="4":
-            t = raw_input("choose team to join it >>> ")
+            t = raw_input("choose team to get information >>> ")
             for i in Team_list:
                 if i.getName()==t:
                     print(i.getInformation())

@@ -1,3 +1,4 @@
+from Player import Player
 
 WHITE=True
 BLACK=False
@@ -14,11 +15,16 @@ class Team:
 
     def getColor(self):
         return self.color
+
     def __str__(self):
         return self.name
 
-    def joinPlayer(self):
-        print()
+    def addPlayer(self,player_name):
+        player=Player(player_name,self)
+        self.players_member.append(player)
+        player.getName()
+        player.getTeam()
+
 
     def getInformation(self):
         print("Team name is --> ",self.getName())
