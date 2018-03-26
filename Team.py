@@ -5,7 +5,7 @@ BLACK=False
 
 class Team:
     name='0'
-    players_member={}
+    players_member=[]
     def __init__(self,name,color):
         self.name=name
         self.color=color
@@ -21,12 +21,12 @@ class Team:
 
     def addPlayer(self,player_name):
         player=Player(player_name,self)
-        self.players_member.update({player: self.getName()})
+        self.players_member.append(player)
         player.getName()
         player.getTeam()
 
 
-    def getInformation(self,t):
+    def getInformation(self):
         print("Team name is --> ",self.getName())
         # print("Team color is --> ",self.getColor())
         if self.getColor() == False:
@@ -35,7 +35,6 @@ class Team:
             print(" Team color is ===> 'White' ")
         if self.players_member:
             for i in self.players_member:
-                if t in self.players_member.values():
-                    print(self.players_member.keys())
+                print(i)
         else:
             print("No members up to now ")
