@@ -42,12 +42,13 @@ def startGame(board, playerSide):
         board.changeBoard(playerSide, pMove, go_pMove)
 
 
-def RegestTeam(team):
+def RegestTeam():
     T_name=raw_input("Enter Team name>>> ")
     T_color = askForPlayerSide()
-    team = Team(T_name,T_color)
+    team=Team(T_name,T_color)
     Team_list.append(team)
     RegestPlayer(team)
+
 
 def RegestPlayer(team):
     m=raw_input("How many players you want to add >>> ")
@@ -58,7 +59,6 @@ def RegestPlayer(team):
 
 
 if __name__ == '__main__':
-    team = Team(0,0)
     board = Board()
 
     while True:
@@ -72,7 +72,7 @@ if __name__ == '__main__':
         char=raw_input("choose number >> ")
 
         if char=="1":
-            RegestTeam(team)
+            RegestTeam()
         elif char=="3":
             for i in Team_list:
                 print(i)
@@ -80,7 +80,7 @@ if __name__ == '__main__':
             t = raw_input("choose team to get information >>> ")
             for i in Team_list:
                 if i.getName()==t:
-                    print(i.getInformation())
+                    print(i.getInformation(t))
         elif char=="5":
             print(board.initialize())
             while True:

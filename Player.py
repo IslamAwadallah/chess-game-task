@@ -7,6 +7,7 @@ class Player:
 
     def getName(self):
         print(self.name)
+
     def getTeam(self):
         print(self.team)
 
