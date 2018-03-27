@@ -26,7 +26,7 @@ class Team:
         player.getTeam()
 
 
-    def getInformation(self):
+    def getInformation(self,a):
         print("Team name is --> ",self.getName())
         # print("Team color is --> ",self.getColor())
         if self.getColor() == False:
@@ -35,6 +35,8 @@ class Team:
             print(" Team color is ===> 'White' ")
         if self.players_member:
             for i in self.players_member:
-                print(i)
+                # print(type(i.getTeam().getName()))
+                if i.getTeam().getName()==a:
+                    print i
         else:
             print("No members up to now ")

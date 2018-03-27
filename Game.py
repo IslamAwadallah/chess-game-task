@@ -80,7 +80,7 @@ if __name__ == '__main__':
             t = raw_input("choose team to get information >>> ")
             for i in Team_list:
                 if i.getName()==t:
-                    print(i.getInformation())
+                    print(i.getInformation(t))
         elif char=="5":
             print(board.initialize())
             while True:

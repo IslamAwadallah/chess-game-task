@@ -9,7 +9,7 @@ class Player:
         print(self.name)
 
     def getTeam(self):
-        print(self.team)
+        return self.team
 
     def __str__(self):
         return self.name
